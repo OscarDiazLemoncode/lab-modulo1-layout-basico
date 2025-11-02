@@ -1,0 +1,55 @@
+@use '../../src/variables' as *;
+@import '../../src/commons';
+@import 'core';
+
+
+/* VARIABLES */
+$color-bg-base: $color-primary;
+$color-txt-base: $color-white;
+
+$container:1;
+@while $container <= 3{
+.container-#{$container} {    
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    // box background
+    $item: 1;
+    @while $item <= 4 {
+        .darken-#{$item} {
+            background-color: calculate-color($container,$item);
+            // box text
+            .color-box-text{
+                color:  calculate-color($container,$item, $h:0, $s:0, $l:100, $is-dark:false);
+            }
+        }
+
+        .lighten-#{$item} {
+            background-color: calculate-color($container,$item, $is-dark:false);
+            // box text
+            .color-box-text{
+                color:  calculate-color($container,$item, $h:0, $s:0, $l:10);
+            }
+        }
+        $item: $item + 1;
+    }
+    .base-color {
+    background-color: base-color($container);
+    color:$color-txt-base;
+}
+
+}
+$container: $container + 1;
+}
+
+.box {
+    @include padding-size($base-size * 3)
+}
+
+.palettes{
+    display: flex;
+    flex-direction: column;
+    gap: $base-size * 2;
+    padding: $base-size * 2;
+}

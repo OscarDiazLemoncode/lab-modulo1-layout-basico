@@ -1,0 +1,29 @@
+@use '_variables' as *;
+@import 'commons';
+
+*, *::before, *::after{
+    box-sizing: border-box;
+}
+
+
+main{
+    width: clamp(400px, 800px, 70vw);
+}
+
+.card{    
+    width: fit-content;
+    &__link{
+        border-radius: $base-size;
+        font-size: $fs-MD;
+        text-align: center;
+        padding: $base-size;
+        color: $color-white;
+        background-color: $color-primary;
+    padding: $base-size * 2 $base-size * 4;
+    &:hover{
+        background-color: $color-white;
+        color: $color-primary;
+        border: 1px solid $color-primary;
+    }
+    }
+}
