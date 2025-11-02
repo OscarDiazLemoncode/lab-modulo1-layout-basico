@@ -1,6 +1,4 @@
-// $base-hue: 234;
-// $base-saturation: 92%;
-// $base-lightness: 55%;
+
 $color-bg-red: hsl(0 85% 51%);
 $color-bg-blue: hsl(234 92% 55%);
 $color-bg-green: hsl(107 93% 39%);
@@ -36,8 +34,3 @@ $color-bg-green: hsl(107 93% 39%);
     }
     @return $bg-color;   
 }
-
-/* @function calculate-color( $number_item, $is-dark:true, $h:$base-hue,$s:$base-saturation, $l:$base-lightness){       
-        $bg-color: if($is-dark, hsl($h $s $l - ($number_item * 10)), hsl($h $s $l + ($number_item * 10)));   
-    @return $bg-color;   
-} */
